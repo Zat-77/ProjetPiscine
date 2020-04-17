@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="EbayECE.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-inverse">
+=======
+<html>
+<head>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+   .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;}
+
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+>>>>>>> 0bcc687a18123f468041ca56e768c24ea9a02e2c
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+<<<<<<< HEAD
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="ItemRegister.html">Vendre</a></li>
+        <li><a href="Home.html">Mes Objets</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="EditSeller.html">Compte</a></li>
+        <li><a href="Home.html">Logout</a></li>
+=======
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="Categorie.html">Categorie</a></li>
+        <li><a href="#">Vente flash</a></li>
+        <li><a href="#">Vendre</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+>>>>>>> 0bcc687a18123f468041ca56e768c24ea9a02e2c
+      </ul>
+    </div>
+  </div>
+</nav>
+<<<<<<< HEAD
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+
+    <div class="col-sm-8 text-left"> 
+       <div id="formulaire">
+        <h1 align="center">Formulaire Item</h1>
+        <form action="FormulaireItem.php" method="post">
+          <table>
+            <tr>
+              <td>Nom</td>
+              <td><input type="text" name="nom"></td>
+            </tr>  
+            <tr>
+              <td>Photo/Video Item</td>
+              <td><input type="file" name="photo_item"></td>
+            </tr>
+            <tr>
+              <td>Prix</td>
+              <td><input type="number" name="prix"></td>
+            </tr>
+            <tr>
+              <td>Catégorie</td>
+              <td>
+                <input type="radio" value="ferraille_ou_tresor" /> Ferraille ou Trésor <br />
+                <input type="radio" value="bon_pour_le_musee" /> Bon pour le Musée <br />
+                <input type="radio" value="accessoire_vip" /> Accessoire VIP <br />                
+              </td>
+            </tr>
+            <tr>
+              <td>Numero</td>
+              <td><input type="number" name="numero"></td>
+            </tr>
+              <td>Description</td>
+              <td><textarea rows="5" cols="20" wrap="physique" name="description"></textarea></td>
+            </tr>
+            <tr>
+              <td>Mode de Vente</td>
+              <td>
+                <input type="radio" value="enchere" /> Enchère <br />
+                <input type="radio" value="vente_immediate" /> Vente Immédiate <br />
+                <input type="radio" value="negociation" /> Negociation <br />
+                <input type="radio" value="vente_ou_negociation" /> Vente ou Négociation <br />
+              </td>
+            </tr>
+            <tr>
+            <tr>
+              <td colspan="2" align="center"><br><input type="submit" value="Valider"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+    
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
+</footer>
+
+=======
+
+<h2>Responsive Form</h2>
+<p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+
+<div class="container">
+  <form action="/action_page.php">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">First Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Last Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Country</label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Subject</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
+
+>>>>>>> 0bcc687a18123f468041ca56e768c24ea9a02e2c
+</body>
+</html>
