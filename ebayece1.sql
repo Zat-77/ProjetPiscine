@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 18 avr. 2020 à 14:38
+-- Généré le :  sam. 18 avr. 2020 à 14:40
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -21,21 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `ebayece`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `achat`
---
-
-DROP TABLE IF EXISTS `achat`;
-CREATE TABLE IF NOT EXISTS `achat` (
-  `achat_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `achat_IDItem` int(11) NOT NULL,
-  `achat_IDAcheteur` int(11) NOT NULL,
-  `achat_Prix` int(11) NOT NULL,
-  PRIMARY KEY (`achat_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
