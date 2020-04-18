@@ -49,7 +49,7 @@
     <div class="col-sm-8 text-left"> 
        <div id="formulaire">
         <h1 align="center">Formulaire Item</h1>
-        <form action="FormulaireItem.php" method="post">
+        <form action="ItemRegister.php" method="post" enctype="multipart/form-data">
           <table>
             <tr>
               <td>Nom</td>
@@ -57,7 +57,7 @@
             </tr>  
             <tr>
               <td>Photo/Video Item</td>
-              <td><input type="file" name="photo_item"></td>
+              <td><input type="file" name="photo"></td>
             </tr>
             <tr>
               <td>Prix</td>
@@ -66,9 +66,9 @@
             <tr>
               <td>Catégorie</td>
               <td>
-                <input type="radio" value="ferraille_ou_tresor" /> Ferraille ou Trésor <br />
-                <input type="radio" value="bon_pour_le_musee" /> Bon pour le Musée <br />
-                <input type="radio" value="accessoire_vip" /> Accessoire VIP <br />                
+                <input type="radio" name="categorie" value="ferraille_ou_tresor" /> Ferraille ou Trésor <br />
+                <input type="radio" name="categorie" value="bon_pour_le_musee" /> Bon pour le Musée <br />
+                <input type="radio" name="categorie" value="accessoire_vip" /> Accessoire VIP <br />                
               </td>
             </tr>
             <tr>
@@ -81,15 +81,15 @@
             <tr>
               <td>Mode de Vente</td>
               <td>
-                <input type="radio" value="enchere" /> Enchère <br />
-                <input type="radio" value="vente_immediate" /> Vente Immédiate <br />
-                <input type="radio" value="negociation" /> Negociation <br />
-                <input type="radio" value="vente_ou_negociation" /> Vente ou Négociation <br />
+                <input type="radio" name="mode" value="enchere" /> Enchère <br />
+                <input type="radio" name="mode" value="vente_immediate" /> Vente Immédiate <br />
+                <input type="radio" name="mode" value="negociation" /> Negociation <br />
+                <input type="radio" name="mode" value="vente_ou_negociation" /> Vente ou Négociation <br />
               </td>
             </tr>
             <tr>
             <tr>
-              <td colspan="2" align="center"><br><input type="submit" value="Valider"></td>
+              <td colspan="2" align="center"><br><input type="submit" name="button1" value="Valider"></td>
             </tr>
           </table>
         </form>
