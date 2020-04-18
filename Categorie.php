@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 <head>
   <title>Categorie</title>
   <meta charset="utf-8">
@@ -33,9 +33,15 @@
     }
   }
   </style>
+  <script>
+  function myFunction() {
+  return 'Home.html';   // The function returns the product of p1 and p2
+}
+</script>
 </head>
 <body>
-
+  <?php include("Menu.php"); ?>
+<!--
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -48,7 +54,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li ><a href="Home.html">Home</a></li>
+        <li ><a href="<script> ">   Home</a></li>
         <li class="active" ><a href="#">Categorie</a></li>
         <li><a href="#">Vente flash</a></li>
         <<li><a href="ItemRegister.html">Vendre</a></li>
@@ -59,7 +65,7 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav>-->
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
