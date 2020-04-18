@@ -18,10 +18,7 @@
     	$user="acheteur";
 		if($user=="nonlog")
 		 {
-			 echo " <ul class='nav navbar-nav'>
-             <li><a href='Home.html'>Home</a></li>
-             <li><a href='Produit.html'>Products</a></li>
-              </ul>
+			 echo " 
           <ul class='nav navbar-nav navbar-right'>
            <li><a href= 'Login.html'><span class='glyphicon glyphicon-log-in'></span>Log in</a></li>
           </ul>";
