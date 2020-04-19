@@ -75,7 +75,7 @@ $item=;
 			<p><small>' $item['item_TypeVente']' </small></p>
 
 			
-			<h6>Vendeur:   ?  <br>Statut: '$item['item_Statut']'<br>nombre de tentatives: '$data['nego_Tentative']' <br><b>Prix Proposé: '$data['nego_Offre']' euros </b></h6>
+			<h6> Vendeur: '$vendeur['vendeur_pseudo']'  <br>Statut: '$item['item_Statut']'<br>nombre de tentatives: '$data['nego_Tentative']' <br><b>Prix Proposé: '$data['nego_Offre']' euros </b></h6>
 			';
 			
 			?>
