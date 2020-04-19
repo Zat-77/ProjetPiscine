@@ -13,10 +13,21 @@
   background-color: #f1f1f1;
   height: 100%;
 }
-.bouton_item {
-   text-align: right;
-   margin-right: 7px;
+
+.bouton_item {   
+   width: 145px;
 }
+
+.bouton_volet_recherche{
+    width: 135px;
+}
+
+.emplacement_boutons_item{
+  text-align: right;
+   margin-right: 15px;
+   margin-bottom: 15px;
+}
+
 
 /* Set black background color, white text and some padding */
 footer {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home</title>
+  <title>Produit</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -40,10 +40,32 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+       <form action="AdminProduct.php" method="post">
+        <table>
+
+          <tr>
+            <td><input type="text" placeholder="Recherche" name="recherche"></td>
+          </tr>
+
+          <tr>
+            <td align="left" ><br>
+              <input  type="checkbox" name="recherche_item" value="ferraille_ou_tresor" /> Ferraille ou trésor <br/>
+              <input type="checkbox" name="recherche_item" value="bon_pour_le_musee" /> Bon pour le musée  <br/>
+              <input type="checkbox" name="recherche_item" value="accessoire_vip" /> Accessoire VIP <br/>
+              <input type="checkbox" name="recherche_item" value="meilleur_offre" /> Meilleur offre <br/>
+              <input type="checkbox" name="recherche_item" value="passer_a_la_commande" /> Passer à la commande <br/>
+              <input type="checkbox" name="recherche_item" value="achat_immediat" /> Achat immédiat <br/> 
+            </td>
+          </tr>
+          <tr>
+            <td><br><input type="submit" class="bouton_volet_recheche" name="rechercher" value="Rechercher"></td>
+          </tr>
+          
+
+        </table>
+      </form>
     </div>
+
     <div class="col-sm-8 text-center"> 
      
 
