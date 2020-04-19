@@ -48,8 +48,15 @@ footer {
   background-color: #555;
   color: white;
   padding: 15px;
+<<<<<<< HEAD
   position: relative;
   margin-top: 
+=======
+  position:absolute;
+
+bottom:0;
+  margin-bottom: 
+>>>>>>> 4a6b598ac132d7ad37e82861cea920863dbf2abd
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
