@@ -46,10 +46,18 @@ body{
 /* Set black background color, white text and some padding */
 footer {
   background-color: #555;
+  
   color: white;
   padding: 15px;
+<<<<<<< HEAD
   position: relative;
   margin-top: 
+=======
+  position:absolute;
+
+bottom:0;
+  margin-bottom: 
+>>>>>>> dcbd019578d5a9299ef97140b9c4c5e1b416b7a5
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
