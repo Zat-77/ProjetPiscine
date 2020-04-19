@@ -12,8 +12,10 @@
 
 
 <body>
-
- <?php include("Menu.php"); ?>
+<?php
+session_start();  
+$_SESSION['TypeUser']="nonlog";
+  include("Menu.php"); ?>
   
 <div class="container-fluid text-center">    
   <div class="row content">
