@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +24,75 @@
       <p><a href="PanierEnchere.php">Enchère</a></p>
     </div>
     <div class="col-sm-8 text-center"> 
-     
 
+ <?php
+     
+     $database1 = "ebayece";
+     //connectez-vous dans votre BDD
+     //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
+      $db_handle = mysqli_connect('localhost', 'root', '');
+      $db_found = mysqli_select_db($db_handle, $database1);
+      $sql="SELECT * FROM negociation ";
+      $result = mysqli_query($db_handle, $sql);
+
+      //on trouve le livre recherché
+      while ($data = mysqli_fetch_assoc($result)) {
+      
+      
+      $image1=$data['item_Photo'];
+
+      if ($data['item_Categorie'] == "1") {
+
+      $categorie1 = "Ferraille ou Trésor";
+      
+    }
+    elseif ($data['item_Categorie'] == "2") {
+    $categorie1 = " Bon pour le Musée";
+    
+  }
+  elseif ($data['item_Categorie'] == "3") {
+  $categorie1 .= "Accessoire Vip";
+  
+}
+
+
+$vendeur=; 
+$item=;
+?>
+<div class="container mt-3">
+  <div class="media border p-0">
+    <?php print'  <img src="'$item['item_Nom']'" class="mr-3 mt-0" style="width:220px;">';?>
+    <div class="media-body">
+
+      
+        <?php
+      print'<h4>'$item['item_Nom']'</h4>
+      <h8><i>Categorie : '$item['item_Categorie']'<br>Type de vente: '$item['item_TypeVente']'</i></h8>
+       
+      <p><small>' $item['item_TypeVente']' </small></p>
+
+      
+     <h6>Vendeur: '$vendeur['vendeur_pseudo']' <br>Max allowed: '$data['enchere_PrixMax'] <br><b>Actual Price: ' $item['item_Prix']'  </b></h6>
+      ';
+      
+      ?>
+      <div class="emplacement_boutons_item">
+
+        <div class="emplacement_boutons_item">
+
+          <input type="button" class="bouton_item" onclick="#" value="Edit Max Allowed" >
+          
+
+      </div>
+    </div>     
+  </div>
+</div> 
+
+<?php   
+}
+
+mysqli_close($db_handle);
+?>  
      
       
       
