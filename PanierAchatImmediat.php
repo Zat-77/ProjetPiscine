@@ -26,50 +26,50 @@
     <div class="col-sm-8 text-center"> 
      
 <?php
-$sql=$_SESSION['sql'];
+session_start();
+$_SESSION['TypeUser']="acheteur";
 $database1 = "ebayece";
 //connectez-vous dans votre BDD
 //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database1);
+$sql="SELECT * FROM immediat WHERE immediat_IDAcheteur = 5";
 $result = mysqli_query($db_handle, $sql);
 
 //on trouve le livre recherché
       while ($data = mysqli_fetch_assoc($result)) {
         
         
-        $image1=$data['item_Photo'];
+       $tampon=$data['immediat_IDItem'];
+$itemID="SELECT * FROM item WHERE item_ID=( '$tampon')";
 
-        if ($data['item_Categorie'] == "1") {
 
-      $categorie1 = "Ferraille ou Trésor";
-      
-    }
-    elseif ($data['item_Categorie'] == "2") {
-      $categorie1 = " Bon pour le Musée";
-      
-    }
-    elseif ($data['item_Categorie'] == "3") {
-      $categorie1 .= "Accessoire Vip";
-      
-    }
+$resultat = mysqli_query($db_handle, $itemID);
+$item = mysqli_fetch_assoc($resultat);
+$tampon2=$item['item_Nom'];
+echo "$tampon2";
+
+$tampon1=$item['item_IDVendeur'];
+$vendeurID="SELECT * FROM vendeur WHERE vendeur_ID=( '$tampon1')";
+$resultat_Vendeur = mysqli_query($db_handle, $vendeurID);
+$vendeur = mysqli_fetch_assoc($resultat_Vendeur);
        ?>
       
 
 <div class="container mt-3">
   <div class="media border p-0">
-    <?php print'  <img src="'$item['item_Nom']'" class="mr-3 mt-0" style="width:220px;">';?>
+    <?php print'  <img src="image/'.$item['item_Photo'].'" class="mr-3 mt-0" style="width:220px;">';?>
     <div class="media-body">
 
       
         <?php
-      print'<h4>'$item['item_Nom']'</h4>
-      <h8><i>Categorie : '$item['item_Categorie']'<br>Type de vente: '$item['item_TypeVente']'</i></h8>
+      print'<h4>'.$item['item_Nom'].'</h4>
+      <h8><i>Categorie : '.$item['item_Categorie'].'<br>Type de vente: '.$item['item_TypeVente'].'</i></h8>
        
-      <p><small>' $item['item_TypeVente']' </small></p>
+      <p><small>' .$item['item_TypeVente'].' </small></p>
 
       
-      <h6>Vendeur: '$vendeur['vendeur_pseudo']'   <br><b>Prix  '$data['item_Prix']' euros </b></h6>
+      <h6>Vendeur: '.$vendeur['vendeur_Pseudo'].'   <br><b>Prix  '.$item['item_Prix'].' euros </b></h6>
       ';
       
       ?>
