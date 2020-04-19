@@ -29,29 +29,39 @@
           <table>
             <tr>
               <td>Pseudo</td>
-              <td><input type="text" name="pseudo"></td>
+              <td>
+               <?php  ECHO '   <input type="text" name="pseudo"> value= $data['vendeur_Pseudo'] >';?>
+              </td>
             </tr>  
             <tr>
               <td>Photo Profil</td>
-              <td><input type="file" name="photo_profil"></td>
+              <td>
+               <?php ECHO '  <input type="file" name="photo_profil" value= $data['vendeur_Profil'] >';?>
+              </td>
             </tr>
             <tr>
               <td>Nom</td>
-              <td><input type="text" name="nom"></td>
+              <td>
+                <?php ECHO ' <input type="text" name="nom" value= $data['vendeur_Profil'] >';?>
+              </td>
             </tr>
             <tr>
               <td>Mail</td>
-              <td><input type="text" name="mail"></td>
+              <td>
+                  <?php ECHO ' <input type="text" name="mail">';?>
+              </td>
             </tr>
               <td>Mot de passe</td>
-              <td><input type="password" name="mot_de_passe"></td>
+              <td>
+                <?php ECHO ' <input type="password" name="mot_de_passe"> value= $data['vendeur_Profil'] >';?>
+              </td>
             </tr>
             <tr>
               <td>Fond Preferé</td>
               <td>
-                <input type="radio" value="bleu" /> Bleu <br />
-                <input type="radio" value="vert" /> Vert <br />
-                <input type="radio" value="rouge" /> Rouge <br />
+                <input type="radio" value="bleu" name="fond"/> Bleu <br />
+                <input type="radio" value="vert" name="fond"/> Vert <br />
+                <input type="radio" value="rouge" name="fond" /> Rouge <br />
               </td>
             </tr>
             <tr>

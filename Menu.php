@@ -15,7 +15,7 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
     <?php
-    	$user="acheteur";
+    	$user=$_SESSION['TypeUser'];
 		if($user=="nonlog")
 		 {
 			 echo " 
@@ -28,11 +28,14 @@
          if($user=="admin")
          {
         	 echo " <ul class='nav navbar-nav'>
-             		<li><a href='Home.php'>Home</a></li>
-            		 <li><a href='Produit.php'>Products</a></li>
+             	  	<li><a href='Home.php'>Home</a></li>
+            		 <li><a href='AdminProduct.php'>Products</a></li>
+                             <li><a href='ItemRegister.php'>Vendre</a></li>
+             <li><a href='MesObjets.php'>MesObjets</a></li>
+                 <li><a href='Negociation.php'>Negociation</a></li>
               </ul>
           	<ul class='nav navbar-nav navbar-right'>
-           		<li><a href='PanierAchatImmediat.php'><span class='glyphicon glyphicon-shopping-cart'></span>Panier</a></li>
+           		<li><a href='AdminAdmin'>Admin</a></li>
            		<li><a href='EditSeller.php'>Compte</a></li>
            		<li><a href='Login.php'>Logout</a></li>
           </ul>";
@@ -46,9 +49,9 @@
              <li><a href='Home.php'>Home</a></li>
              <li><a href='ItemRegister.php'>Vendre</a></li>
              <li><a href='MesObjets.php'>MesObjets</a></li>
+             <li><a href='Negociation.php'>Negociation</a></li>
               </ul>
-          <ul class='nav navbar-nav navbar-right'>
-           <li><a href='PanierAchatImmediat.php'><span class='glyphicon glyphicson-shopping-cart'></span>Panier</a></li>
+           <ul class='nav navbar-nav navbar-right'>
            <li><a href='EditSeller.php'><span class='glyphicon glyphicon-user'></span>Compte</a></li>
            <li><a href= 'Login.php'><span class='glyphicon glyphicon-log-out'></span>Log Out</a></li>
            </ul>";
