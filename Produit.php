@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$_SESSION['TypeUser']="admin";
+$_SESSION['TypeUser']="nonlog";
 ?>
 
 
@@ -65,6 +65,7 @@ $meilleur_offre = isset($_POST["meilleur_offre"])? $_POST["meilleur_offre"] : ""
 $passer_a_la_commande = isset($_POST["passer_a_la_commande"])? $_POST["passer_a_la_commande"] : "";
 $achat_immediat = isset($_POST["achat_immediat"])? $_POST["achat_immediat"] : "";
 $button1 = isset($_POST["button1"])? $_POST["button1"] : "";
+$recherche = isset($_POST["recherche"])? $_POST["recherche"] : "";
 
 
 
@@ -79,7 +80,11 @@ $db_found = mysqli_select_db($db_handle, $database);
 if (isset($_POST['button1'])) {
   if ($db_found) {
     $sql = "SELECT * FROM item";
-    
+    if ($recherche != "" && $accessoire == "" && $musee == "" && $ferraille == "" &&$meilleur_offre == "" && $passer_a_la_commande == "" && $achat_immediat == "") {
+
+      $sql .= " WHERE item_Nom LIKE '%$recherche%' UNION SELECT * FROM item WHERE item_IDVendeur = (SELECT vendeur_ID FROM vendeur WHERE vendeur_Pseudo LIKE '%$recherche%')";
+      
+    }
     if ($ferraille != "") {
 //on cherche le livre avec les paramètres titre et auteur
       $sql .= " WHERE (item_Categorie LIKE 1";
@@ -104,7 +109,9 @@ if (isset($_POST['button1'])) {
     if ($accessoire != "" && $musee == "" && $ferraille == "") {
       $sql .= " WHERE (item_Categorie LIKE 3)";
     }
-
+     if ($accessoire == "" && $musee == "" && $ferraille == "" && $recherche == "") {
+      $sql .= " WHERE (item_Categorie)";
+    }
     if ($meilleur_offre != "") {
 //on cherche le livre avec les paramètres titre et auteur
       $sql .= " AND (item_TypeVente LIKE 1";
@@ -132,6 +139,7 @@ if (isset($_POST['button1'])) {
     
     $result = mysqli_query($db_handle, $sql);
 //tester s'il y a de résultat
+   
     if (mysqli_num_rows($result) == 0) {
 //le livre recherché n'existe pas
       echo "Item not found";
