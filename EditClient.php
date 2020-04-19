@@ -29,43 +29,63 @@
           <table>
             <tr>
               <td>Nom</td>
-              <td><input type="text" name="nom"></td>
+              <td>
+               <?php  ECHO ' <input type="text" name="nom" value= $data['acheteur_Nom'] >';?>
+              </td>
             </tr>
             <tr>
               <td>Prenom</td>
-              <td><input type="text" name="prenom"></td>
+              <td>
+              <?php  ECHO '<input type="text" name="prenom" value= $data['acheteur_Prenom'] >';?>
+              </td>
             </tr>
             <tr>
               <td>Ville</td>
-              <td><input type="text" name="ville"></td>
+              <td>
+               <?php  ECHO ' <input type="text" name="ville"  value=$data['acheteur_Ville']>';?>
+              </td>
             </tr>
             <tr>
               <td>Code Postal</td>
-              <td><input type="number" name="code_postal"></td>
+              <td>
+                <?php ECHO ' <input type="number" name="code_postal" value=$data['acheteur_CodePost']>';?>
+              </td>
             </tr>
             <tr>
               <td>Pays</td>
-              <td><input type="text" name="pays"></td>
+              <td>
+               <?php ECHO '  <input type="text" name="pays" value=$data['acheteur_Pays']>';?>
+              </td>
             </tr>
             <tr>
               <td>Telephone</td>
-              <td><input type="number" name="telephone"></td>
+              <td>
+                <?php ECHO ' <input type="number" name="telephone" value=$data['acheteur_Telephone']>';?>
+              </td>
             </tr>
             <tr>
               <td>Adresse1</td>
-              <td><input type="text" name="adresse1"></td>
+              <td>
+                  <?php ECHO '<input type="text" name="adresse1" value=$data['acheteur_Adresse1']>';?>
+              </td>
             </tr>
             <tr>
               <td>Adresse2</td>
-              <td><input type="text" name="adresse2"></td>
+              <td>
+                <?php ECHO ' <input type="text" name="adresse2" value=$data['acheteur_Adresse2']>';?>
+              </td>
             </tr>
             <tr>
               <td>Mail</td>
-              <td><input type="text" name="mail"></td>
+              <td>
+               <?php ECHO ' <input type="text" name="mail" value=$data['acheteur_Mail']>';?>
+              </td>
             </tr>
             <tr>
               <td>Mot de passe</td>
-              <td><input type="password" name="mot_de_passe"></td>
+              <td>
+               <?php ECHO '   <input type="password" name="mot_de_passe"> value=$data['acheteur_Mdp']>';?>
+              </td>
             </tr>
             <tr>
               <td colspan="2" align="center"><br><input type="submit" value="Valider"></td>
