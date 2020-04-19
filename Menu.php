@@ -20,20 +20,21 @@
 		 {
 			 echo " 
           <ul class='nav navbar-nav navbar-right'>
-           <li><a href= 'Login.html'><span class='glyphicon glyphicon-log-in'></span>Log in</a></li>
+           <li><a href= 'Login.php'><span class='glyphicon glyphicon-log-in'></span>Log in</a></li>
+           <li><a href= 'Register.php'><span class='glyphicon glyphicon-log-in'></span>Log in</a></li>
           </ul>";
          
          }
          if($user=="admin")
          {
         	 echo " <ul class='nav navbar-nav'>
-             		<li><a href='Home.html'>Home</a></li>
-            		 <li><a href='Produit.html'>Products</a></li>
+             		<li><a href='Home.php'>Home</a></li>
+            		 <li><a href='Produit.php'>Products</a></li>
               </ul>
           	<ul class='nav navbar-nav navbar-right'>
-           		<li><a href='PanierAchatImmediat.html'><span class='glyphicon glyphicon-shopping-cart'></span>Panier</a></li>
-           		<li><a href='EditSeller.html'>Compte</a></li>
-           		<li><a href='Home.html'>Logout</a></li>
+           		<li><a href='PanierAchatImmediat.php'><span class='glyphicon glyphicon-shopping-cart'></span>Panier</a></li>
+           		<li><a href='EditSeller.php'>Compte</a></li>
+           		<li><a href='Login.php'>Logout</a></li>
           </ul>";
 
 
@@ -42,27 +43,27 @@
          if($user=="vendeur")
          {
          	         		   	 echo " <ul class='nav navbar-nav'>
-             <li><a href='Home.html'>Home</a></li>
-             <li><a href='ItemRegister.html'>Vendre</a></li>
-             <li><a href='MesObjets.html'>MesObjets</a></li>
+             <li><a href='Home.php'>Home</a></li>
+             <li><a href='ItemRegister.php'>Vendre</a></li>
+             <li><a href='MesObjets.php'>MesObjets</a></li>
               </ul>
           <ul class='nav navbar-nav navbar-right'>
-           <li><a href='PanierAchatImmediat.html'><span class='glyphicon glyphicon-shopping-cart'></span>Panier</a></li>
-           <li><a href='EditSeller.html'><span class='glyphicon glyphicon-user'></span>Compte</a></li>
-           <li><a href= 'Login.html'><span class='glyphicon glyphicon-log-out'></span>Log Out</a></li>
+           <li><a href='PanierAchatImmediat.php'><span class='glyphicon glyphicson-shopping-cart'></span>Panier</a></li>
+           <li><a href='EditSeller.php'><span class='glyphicon glyphicon-user'></span>Compte</a></li>
+           <li><a href= 'Login.php'><span class='glyphicon glyphicon-log-out'></span>Log Out</a></li>
            </ul>";
          }
 
          if($user=="acheteur")
          	{
          		   	 echo " <ul class='nav navbar-nav'>
-             <li><./a href='Home.html'>Home</a></li>
-             <li><./a href='Produit.html'>Products</a></li>
+             <li><a href='Home.php'>Home</a></li>
+             <li><a href='Produit.php'>Products</a></li>
               </ul>
           <ul class='nav navbar-nav navbar-right'>
-           <li><a href='PanierAchatImmediat.html'><span class='glyphicon glyphicon-shopping-cart'></span>Panier</a></li>
-           <li><a href='EditClient.html'><span class='glyphicon glyphicon-user'></span>Compte</a></li>
-           <li><a href= 'Login.html'><span class='glyphicon glyphicon-log-out'></span>Log Out</a></li>
+           <li><a href='PanierAchatImmediat.php'><span class='glyphicon glyphicon-shopping-cart'></span>Panier</a></li>
+           <li><a href='EditClient.php'><span class='glyphicon glyphicon-user'></span>Compte</a></li>
+           <li><a href= 'Login.php'><span class='glyphicon glyphicon-log-out'></span>Log Out</a></li>
           </ul>";
          	}
 
