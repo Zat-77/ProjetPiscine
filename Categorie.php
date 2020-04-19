@@ -33,11 +33,7 @@
     }
   }
   </style>
-  <script>
-  function myFunction() {
-  return 'Home.html';   // The function returns the product of p1 and p2
-}
-</script>
+ 
 </head>
 <body>
   <?php include("Menu.php"); ?>

@@ -65,4 +65,4 @@ $result = mysqli_query($db_handle, $sql);
 		echo "Database not found";
 	}*/
 	mysqli_close($db_handle);
-?>
+?>	

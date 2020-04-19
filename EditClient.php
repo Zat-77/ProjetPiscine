@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home</title>
+  <title>RegisterClient</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -13,29 +13,8 @@
 
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="Produit.html">Products</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="EditSeller.html">Compte</a></li>
-        <li><a href="Home.html">Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
+ <?php include("Menu.php"); ?>
+ 
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
@@ -43,48 +22,57 @@
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
     </div>
-
     <div class="col-sm-8 text-left"> 
-       <div id="formulaire">
-        <h1 align="center">Formulaire Vendeur</h1>
-        <form action="FormulaireVendeur.php" method="post">
+      <div id="formulaire">
+        <h1 align="center">Formulaire Client</h1>
+        <form action="FormulaireClient.php" method="post">
           <table>
-            <tr>
-              <td>Pseudo</td>
-              <td><input type="text" name="pseudo"></td>
-            </tr>  
-            <tr>
-              <td>Photo Profil</td>
-              <td><input type="file" name="photo_profil"></td>
-            </tr>
             <tr>
               <td>Nom</td>
               <td><input type="text" name="nom"></td>
             </tr>
             <tr>
+              <td>Prenom</td>
+              <td><input type="text" name="prenom"></td>
+            </tr>
+            <tr>
+              <td>Ville</td>
+              <td><input type="text" name="ville"></td>
+            </tr>
+            <tr>
+              <td>Code Postal</td>
+              <td><input type="number" name="code_postal"></td>
+            </tr>
+            <tr>
+              <td>Pays</td>
+              <td><input type="text" name="pays"></td>
+            </tr>
+            <tr>
+              <td>Telephone</td>
+              <td><input type="number" name="telephone"></td>
+            </tr>
+            <tr>
+              <td>Adresse1</td>
+              <td><input type="text" name="adresse1"></td>
+            </tr>
+            <tr>
+              <td>Adresse2</td>
+              <td><input type="text" name="adresse2"></td>
+            </tr>
+            <tr>
               <td>Mail</td>
               <td><input type="text" name="mail"></td>
             </tr>
+            <tr>
               <td>Mot de passe</td>
               <td><input type="password" name="mot_de_passe"></td>
             </tr>
-            <tr>
-              <td>Fond Preferé</td>
-              <td>
-                <input type="radio" value="bleu" /> Bleu <br />
-                <input type="radio" value="vert" /> Vert <br />
-                <input type="radio" value="rouge" /> Rouge <br />
-              </td>
-            </tr>
-            <tr>
             <tr>
               <td colspan="2" align="center"><br><input type="submit" value="Valider"></td>
             </tr>
           </table>
         </form>
       </div>
-    </div>
-
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
