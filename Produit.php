@@ -2,6 +2,7 @@
 
 session_start();
 $_SESSION['TypeUser']="nonlog";
+$_SESSION['id_User']="5";
 ?>
 
 
@@ -22,7 +23,7 @@ $_SESSION['TypeUser']="nonlog";
 
  <?php include("Menu.php"); ?>
   
-<div class="container-fluid text-center">    
+<div class="container-fluid text-center" >    
   <div class="row content">
     <div class="col-sm-2 sidenav">
        <form action="Produit.php" method="post">
@@ -52,7 +53,7 @@ $_SESSION['TypeUser']="nonlog";
     </div>
 
 
-    <div class="col-sm-8 text-center"> 
+    <div class="col-sm-8 text-center" id="page-container"> 
 
     <?php
 
@@ -190,7 +191,7 @@ if (isset($_POST['button1'])) {
 </div>
 
 <footer class="container-fluid text-center" id='footer'>
-  <p><br>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
+  <p>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
 </footer>
 
 </body>
