@@ -2,13 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>PanierAchatImmediat</title>
+	<title>PanierNegociation</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="EbayECE.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script></head>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>
+      function openForm() {
+      	document.getElementById("myForm").style.display = "block";
+		}
+
+      function closeForm() {
+      	document.getElementById("myForm").style.display = "none";
+      	}
+	</script>
+
+
+</head>
+
+
 <body>
 
  <?php 
@@ -80,10 +94,11 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
           <input type="button" class="bouton_item" onclick="location.href='./SupprimerNegociation.php?id_supprimer= <?php echo $data['nego_ID']  ;?>'" value="Refuser" style="background-color: red; border-color: red; color: white;" >
           <input type="button" class="bouton_item" onclick="#" value="Accepter" style="background-color: green; border-color: green; color: white;" >
           <input type="button" class="bouton_item" onclick="openForm()" value="Reproposer" >
+      </div>
         
 
         <!--div du pop up formulaire--> 
-        
+        <div class="form-popup" id="myForm">
           <form action="updateoffre.php" class="form-container">
             
           
