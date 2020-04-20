@@ -80,17 +80,17 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
           <input type="button" class="bouton_item" onclick="location.href='./SupprimerNegociation.php?id_supprimer= <?php echo $data['nego_ID']  ;?>'" value="Refuser" style="background-color: red; border-color: red; color: white;" >
           <input type="button" class="bouton_item" onclick="#" value="Accepter" style="background-color: green; border-color: green; color: white;" >
           <input type="button" class="bouton_item" onclick="openForm()" value="Reproposer" >
-        </div>
+        
 
         <!--div du pop up formulaire--> 
-        <div class="form-popup" id="myForm">
-          <form action="xxxxxxxxxxxxxxxxx.php" class="form-container">
+        
+          <form action="updateoffre.php" class="form-container">
             
           
-            <input type="number" placeholder="Proposition" name="proposition" style="width: 115px;" required >
+            <input type="number" placeholder="Proposition"  name="proposition" style="width: 115px;" required >
        			
-            <?php $proposition = isset($_POST["proposition"])? $_POST["proposition"] : "";?>
-            <button class="bouton_item" type="submit" onclick="location.href='./updateoffre.php?id_supprimer= <?php echo $data['nego_ID']  ;?>'" style="background-color: green; border-color: green; color: white;">Valider</button>
+            
+            <button class="bouton_item" type="submit" onclick="#" value= "<?php echo $data['nego_ID']  ;?>" name="button1" style="background-color: green; border-color: green; color: white;">Valider</button>
             <?php
 
             // j'ai créer update offre pour le faire las bas mais je sais pas comment passé 2 variable au lieu d'une par l'url 
