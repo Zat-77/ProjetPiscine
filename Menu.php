@@ -33,13 +33,14 @@
           //<li><a href='Home.php'>Home</a></li>
         	 echo " <ul class='nav navbar-dark'>
              	  	
-            		 <li><a href='AdminProduct.php'>Products</a></li>
+            		 <li><a href='AdminAdmin.php'>Products</a></li>
                              <li><a href='ItemRegister.php'>Vendre</a></li>
              <li><a href='MesObjets.php'>MesObjets</a></li>
                  <li><a href='Negociation.php'>Negociation</a></li>
               </ul>
           	<ul class='nav navbar-dark navbar-right'>
-           		<li><a href='AdminAdmin'>Admin</a></li>
+            <li><a href='RegisterSeller.html'>Nouveau Vendeur</a></li>
+           		<li><a href='AdminSeller.php'>Admin</a></li>
            		<li><a href='EditSeller.php'>Compte</a></li>
            		<li><a href='Login.php'>Logout</a></li>
           </ul>";

@@ -26,8 +26,8 @@
 
 
     <div class="col-sm-8 text-center"><br><br> 
-      <li><a href="RegisterClient.php">Enregistrer un Compte Client</a></li><br>
-      <li><a href="RegisterSeller.php">Enregistrer un Compte Vendeur</a></li>
+      <li><a href="RegisterClient.html">Enregistrer un Compte Client</a></li><br>
+      <li><a href="RegisterSeller.html">Enregistrer un Compte Vendeur</a></li>
     </div>
 
     <div class="col-sm-2 sidenav">
