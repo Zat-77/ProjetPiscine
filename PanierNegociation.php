@@ -42,21 +42,7 @@ $_SESSION['TypeUser']="acheteur";
 			while ($data = mysqli_fetch_assoc($result)) {
 			
 			
-			/*$image1=$data['item_Photo'];
 
-			if ($data['item_Categorie'] == "1") {
-
-			$categorie1 = "Ferraille ou Trésor";
-			
-		}
-		elseif ($data['item_Categorie'] == "2") {
-		$categorie1 = " Bon pour le Musée";
-		
-	}
-	elseif ($data['item_Categorie'] == "3") {
-	$categorie1 .= "Accessoire Vip";
-	
-}*/
 $tampon=$data['nego_IDItem'];
 $itemID="SELECT * FROM item WHERE item_ID=( '$tampon')";
 
@@ -89,14 +75,26 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
 			';
 			
 			?>
-			<div class="emplacement_boutons_item">
+        <div class="emplacement_boutons_item" >
+          
+          <input type="button" class="bouton_item" onclick="#" value="Refuser" style="background-color: red; border-color: red; color: white;" >
+          <input type="button" class="bouton_item" onclick="#" value="Accepter" style="background-color: green; border-color: green; color: white;" >
+          <input type="button" class="bouton_item" onclick="openForm()" value="Reproposer" >
+        </div>
 
-				<input type="button" class="bouton_item" onclick="#" value="Refuser" style="background-color: red; border-color: red; color: white;" >
-				<input type="button" class="bouton_item" onclick="#" value="Accepter" style="background-color: green; border-color: green; color: white;" >
-				<input type="button" class="bouton_item" onclick="#" value="Reproposer" >
+        <!--div du pop up formulaire--> 
+        <div class="form-popup" id="myForm">
+          <form action="xxxxxxxxxxxxxxxxx.php" class="form-container">
+            
+          
+            <input type="number" placeholder="Proposition" name="proposition" style="width: 115px;" required >
 
+            <button class="bouton_item" type="submit" style="background-color: green; border-color: green; color: white;">Valider</button>
+            <button class="bouton_item" type="button" onclick="closeForm()" style="background-color: red; border-color: red; color: white;">Annuler</button>
 
-			</div>
+          </form>
+        </div>
+
 		</div>     
 	</div>
 </div> 
