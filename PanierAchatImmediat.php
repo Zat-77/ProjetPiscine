@@ -111,7 +111,7 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
   </div>
 </div>
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center" id='footer'>
   <p>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
 </footer>
 

@@ -47,10 +47,9 @@ body{
 footer {
   background-color: #555;
   color: white;
-  padding: 15px;
+  width: 100%;
 
-  position: relative;
-  margin-top: 
+  position: absolute;
 
  
 

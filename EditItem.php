@@ -251,6 +251,8 @@ if ($mode!= $data['item_TypeVente']) {
 
 ?>
 
-
+<footer class="container-fluid text-center" id='footer'>
+  <p>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
+</footer>
 </body>
 </html>
