@@ -106,7 +106,7 @@ $data = mysqli_fetch_assoc($result);
               </td>
             </tr>
             <tr>
-              <td colspan="2" align="center"><br><input type="submit" name="button1" value="Valider"></td>
+              <td colspan="2" align="center"><br><input type="submit" class="bouton_item" style="background-color: green; border-color: green; color: white; name="button1" value="Valider"></td>
             </tr>
           </table>
         </form>

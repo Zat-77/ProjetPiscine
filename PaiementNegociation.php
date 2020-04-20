@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Paiement</title>
+  <title>PaiementImmediat</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -13,7 +13,28 @@
 
 <body>
 
-<?php include("Menu.php"); ?>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Produit.html">Products</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="Register.html"><span class="glyphicon glyphicon-Register"></span> Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
   
 <div class="container-fluid text-center">    
   <div class="row content">
@@ -28,7 +49,7 @@
 
       <div id="formulaire">
         <h1 align="center">Coordonnées Bancaires</h1>
-        <form action="paiement.php" method="post">
+        <form action="PaiementImmediat.php" method="post">
           <table>
             <tr>
               <td>Type</td>
@@ -61,8 +82,7 @@
               <td align="right"><input type="checkbox" name="cgu" value="cgu" /> J'accepte les CGU <br/>
             </tr>            
             <tr>
-              <td colspan="2" align="right"><br>
-                <input type="submit" class="bouton_item" style="background-color: green; border-color: green; color: white; name="button2" value="Valider"></td>
+              <td colspan="2" align="right"><br><input type="submit" name="button2" value="Valider"></td>
             </tr>
           </table>
         </form>
@@ -82,7 +102,6 @@
     </div>
   </div>
 </div>
-
 <?php
 $date_expiration = isset($_POST["date_expiration"])? $_POST["date_expiration"] : "";
 $cryptogramme = isset($_POST["cryptogramme"])? $_POST["cryptogramme"] : "";
@@ -97,30 +116,35 @@ $database = "ebayece";
 //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
+echo "MAde it";
 if (isset($_POST["button2"])) {
-  if ($db_found)
+  if ($db_found){
   $verif=0; 
+$id_session= 5;
   $sql="SELECT * FROM payement";
+  
   if ($date_expiration != "") {
 //on cherche le livre avec les paramètres titre et auteur
-    $sql .= " WHERE payement_Date LIKE '%$date_expiration%'";
+    $sql .= " WHERE payement_Date = '$date_expiration'";
     if ($cryptogramme != "") {
-      $sql .= " AND payement_Code LIKE '%$cryptogramme%'";
+      $sql .= " AND payement_Code = '$cryptogramme'";
       if ($numero_carte != "") {
 //on cherche le livre avec les paramètres titre et auteur
-        $sql .= " AND payement_Numero LIKE '%$numero_carte%'";
+        $sql .= " AND payement_Numero = '$numero_carte'";
         if ($nom_titulaire != "") {
-          $sql .= " AND payement_NomTitulaire LIKE '%$nom_titulaire%'";
+          $sql .= " AND payement_NomTitulaire = '$nom_titulaire'";
           if ($type_paiement != "") {
 //on cherche le livre avec les paramètres titre et auteur
-            $sql .= " AND payement_Type LIKE '%$type_paiement%'";
-            $verif++;
+            $sql .= " AND payement_Type = '$type_paiement'";
+            $sql .= "AND payement_Provision > (SELECT nego_Offre WHERE nego_IDAcheteur=$id_session)";
+            $verif=1;
+            echo "$sql";
           }
         }
       }
     }
   }
-echo "$sql";
+
     if($verif==1)
       {
         $result = mysqli_query($db_handle, $sql);
@@ -128,7 +152,25 @@ echo "$sql";
       }
       if (mysqli_num_rows($result) != 0) {
 //le livre est déjà dans la BDD
-echo "Votre carte existe!";
+        $sql="SELECT * FROM negociation WHERE nego_IDAcheteur=$id_session ";
+        $res = mysqli_query($db_handle, $sql);
+        $rest = mysqli_fetch_assoc($res);
+        $test = $rest['nego_IDItem'];
+        echo "Brrrrt :$test";
+        //$IDItem = $item_Id;
+       $sql="DELETE FROM item WHERE item_id = '$test'";
+
+$resultat = mysqli_query($db_handle, $sql);
+$sql="DELETE FROM negociation WHERE nego_IDItem='$test'";
+$resultat = mysqli_query($db_handle, $sql);
+$sql="DELETE FROM enchere  WHERE enchere_IDItem='$test'";
+$resultat = mysqli_query($db_handle, $sql);
+$sql="DELETE FROM immediat  WHERE immediat_IDItem='$test'";
+$resultat = mysqli_query($db_handle, $sql);
+
+echo "Votre carte existe! Et a un fond";
+header("Location: PanierNegociation.php");
+}
 }
 }
 mysqli_close($db_handle);
@@ -143,21 +185,8 @@ mysqli_close($db_handle);
 
 
 <footer class="container-fluid text-center" id='footer'>
-  <p><br>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
+  <p>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
