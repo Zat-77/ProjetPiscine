@@ -96,9 +96,20 @@ if (isset($_POST['button1'])) {
 			while ($data = mysqli_fetch_assoc($result)) {
 				if ($tampon== 0) {
 					$_SESSION['TypeUser']="acheteur";
+          ?>
+          <script >
+      location.href = "./Produit.php" ;
+        </script> 
+         <?php
 				}
 				elseif ($tampon== 1) {
 					$_SESSION['TypeUser']="vendeur";
+                    ?>
+          <script >
+      location.href = "./EditSelleur.php" ;
+        </script> 
+         <?php
+               //<script >location.href = "./AdminAdmin.php" ;  </script> 
 				}
 			}
 			$test=$_SESSION['TypeUser'];

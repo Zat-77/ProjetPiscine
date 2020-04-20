@@ -227,6 +227,7 @@ if ($_POST["button1"]) {
 		if ($tampon==10) {
 			mysqli_query($db_handle, $sql);
 			echo "Bienvenue a EbayEce !";
+	
 			?>
 			<br>
 <script >
