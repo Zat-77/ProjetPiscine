@@ -24,7 +24,7 @@
 			 echo " 
           <ul class='nav navbar-dark navbar-right'>
            <li><a href= 'Login.php'><span class='glyphicon glyphicon-log-in'></span>Log in</a></li>
-           <li><a href= 'Register.php'><span class='glyphicon glyphicon-log-in'></span>Log in</a></li>
+           <li><a href= 'Register.php'>Register</a></li>
           </ul>";
          
          }

@@ -73,9 +73,9 @@ $data = mysqli_fetch_assoc($result);
             <tr>
               <td>Fond Preferé</td>
               <td>
-                <input type="radio" value="bleu" name="fond"/> Bleu <br />
-                <input type="radio" value="vert" name="fond"/> Vert <br />
-                <input type="radio" value="rouge" name="fond" /> Rouge <br />
+                <input type="radio" value="Ece" name="fond"/> Ece <br />
+                <input type="radio" value="Loutre" name="fond"/> Loutre <br />
+                <input type="radio" value="GoodGames" name="fond" /> GoodGames <br />
               </td>
             </tr>
             <tr>
