@@ -64,7 +64,7 @@ $itemID="SELECT * FROM item WHERE item_ID=( '$tampon')";
 $resultat = mysqli_query($db_handle, $itemID);
 $item = mysqli_fetch_assoc($resultat);
 $tampon2=$item['item_Nom'];
-echo "$tampon2";
+
 
 $tampon1=$item['item_IDVendeur'];
 $vendeurID="SELECT * FROM vendeur WHERE vendeur_ID=( '$tampon1')";
