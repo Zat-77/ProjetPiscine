@@ -92,7 +92,12 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
             <?php $proposition = isset($_POST["proposition"])? $_POST["proposition"] : "";?>
             <button class="bouton_item" type="submit" onclick="location.href='./updateoffre.php?id_supprimer= <?php echo $data['nego_ID']  ;?>'" style="background-color: green; border-color: green; color: white;">Valider</button>
             <?php
-            	//UPDATE negociation SET nego_Offre= '$proposition'
+
+            // j'ai créer update offre pour le faire las bas mais je sais pas comment passé 2 variable au lieu d'une par l'url 
+            
+            	//$tentative= SELECT nego_Tentative FROM negociation WHERE nego_ID='$data['nego_ID']'
+            	//
+            	//UPDATE negociation SET nego_Offre= '$proposition', nego_Tentative='$tentative' WHERE nego_ID='$data['nego_ID']'
             //
             ?>
             <button class="bouton_item" type="button" onclick="closeForm()" style="background-color: red; border-color: red; color: white;">Annuler</button>

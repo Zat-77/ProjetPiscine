@@ -1,4 +1,4 @@
-<?php
+	<?php
 $sql=$_SESSION['sql'];
 $database1 = "ebayece";
 //connectez-vous dans votre BDD

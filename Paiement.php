@@ -140,8 +140,11 @@ if ($_POST["button2"]) {
     }
     if($verif==1)
       {
-        ?>
+        // Supprimer le truc et virer l'argent 
+        // pour avoir argent et savoir quoi virer variable session
         
+        ?>
+
       }
     else
 
