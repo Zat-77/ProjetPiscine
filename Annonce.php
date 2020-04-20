@@ -202,13 +202,21 @@
 
 
 
+  <--vendeur-->
 
+  <div class="container mt-3">
+    <div class="media border p-0">
+      <img src="table.jpg" class="mr-3 mt-0 image_vendeur">
+      <div class="media-body" style="text-align:  center;">
 
+        <h1>Pseudo Vendeur </h1><br><br>
+        <h5>Nombre Item en Vente: X  </h5>    
 
-
-
-
-
+                  
+        </div>
+      </div>  
+    </div>
+  
 
 
 
