@@ -46,6 +46,32 @@
 
     <div class="col-sm-8 text-center"> 
 
+          <div class="container mt-3">
+             <div class="media border p-0">
+              <?php 
+              $user_session=1;
+              $database = "ebayece";
+
+              $db_handle = mysqli_connect('localhost', 'root', '');
+              $db_found = mysqli_select_db($db_handle, $database);
+
+              $sql='SELECT vendeur_Photo FROM vendeur where vendeur_ID=$user_session';
+              
+              $res = mysqli_query($db_handle, $sql);
+              $vendeura = mysqli_fetch_assoc($res);
+              
+              print '  <img src="image/'.$vendeur['vendeur_Photo'].'" class="mr-3 mt-0" style="width:220px;">';?>
+               <div class="media-body">
+                <h4> 
+              <?php   print  .$vendeur['vendeur_Photo']. ;?>
+               </h4>
+               </div>
+
+             </div>
+           </div>
+
+
+
     <?php
 
 
@@ -62,15 +88,13 @@ $recherche = isset($_POST["recherche"])? $_POST["recherche"] : "";
 
 
 $tampon=0;
-//identifier votre BD
-$database = "ebayece";
-//connectez-vous dans votre BDD
+//identifier votre BD//connectez-vous dans votre BDD
 //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
-$db_handle = mysqli_connect('localhost', 'root', '');
-$db_found = mysqli_select_db($db_handle, $database);
+
+
 
 //A remplacer par SESSION
-$user_session=1;
+
 
 
 
