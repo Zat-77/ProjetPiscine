@@ -107,8 +107,9 @@
 $date_expiration = isset($_POST["date_expiration"])? $_POST["date_expiration"] : "";
 $cryptogramme = isset($_POST["cryptogramme"])? $_POST["cryptogramme"] : "";
 $numero_carte = isset($_POST["numero_carte"])? $_POST["numero_carte"] : "";
-$mot_de_passe = isset($_POST["mot_de_passe"])? $_POST["mot_de_passe"] : "";
 $nom_titulaire = isset($_POST["nom_titulaire"])? $_POST["nom_titulaire"] : "";
+$type_paiement = isset($_POST["type_paiement"])? $_POST["type_paiement"] : "";
+
 
 
 $database = "ebayece";
@@ -116,37 +117,41 @@ $database = "ebayece";
 //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
-if ($_POST["button2"]) {
+if (isset($_POST["button2"])) {
   if ($db_found)
   $verif=0; 
-  $sql="SELECT payement_Date FROM payement WHERE payement_ID='$data['payement_ID']'";
-    {if ($date_expiration==mysqli_query($db_handle, $sql);) {
-      # code...
-      $sql="SELECT payement_Numero FROM payement WHERE payement_ID='$data['payement_ID']'";
-      if($numero_carte==mysqli_query($db_handle, $sql);)
-      {
-        $sql="SELECT payement_Code FROM payement WHERE payement_ID='$data['payement_ID']'";
-        if (mot_de_passe==mysqli_query($db_handle, $sql);) {
-                  $sql="SELECT payement_NomTitulaire FROM payement WHERE payement_ID='$data['payement_ID']'";
-          if (nom_titulaire==mysqli_query($db_handle, $sql);) {
-            # code...
-                  // if prix < compte a placer ici 
-                        $verif=1;
-
+  $sql="SELECT * FROM payement";
+  if ($date_expiration != "") {
+//on cherche le livre avec les paramètres titre et auteur
+    $sql .= " WHERE payement_Date LIKE '%$date_expiration%'";
+    if ($cryptogramme != "") {
+      $sql .= " AND payement_Code LIKE '%$cryptogramme%'";
+      if ($numero_carte != "") {
+//on cherche le livre avec les paramètres titre et auteur
+        $sql .= " AND payement_Numero LIKE '%$numero_carte%'";
+        if ($nom_titulaire != "") {
+          $sql .= " AND payement_NomTitulaire LIKE '%$nom_titulaire%'";
+          if ($type_paiement != "") {
+//on cherche le livre avec les paramètres titre et auteur
+            $sql .= " AND payement_Type LIKE '%$type_paiement%'";
+            $verif++;
           }
-          # code...
         }
       }
     }
+  }
+echo "$sql";
     if($verif==1)
       {
-        // Supprimer le truc et virer l'argent 
-        // pour avoir argent et savoir quoi virer variable session
-        
-        ?>
+        $result = mysqli_query($db_handle, $sql);
 
       }
-    else
+      if (mysqli_num_rows($result) != 0) {
+//le livre est déjà dans la BDD
+echo "Votre carte existe!";
+}
+}
+mysqli_close($db_handle);
 
 
 
@@ -163,6 +168,7 @@ if ($_POST["button2"]) {
 
 </body>
 </html>
+
 
 
 
