@@ -77,7 +77,7 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
 			?>
         <div class="emplacement_boutons_item" >
           
-          <input type="button" class="bouton_item" onclick="#" value="Refuser" style="background-color: red; border-color: red; color: white;" >
+          <input type="button" class="bouton_item" onclick="location.href='./SupprimerNegociation.php?id_supprimer= <?php echo $data['nego_ID']  ;?>'" value="Refuser" style="background-color: red; border-color: red; color: white;" >
           <input type="button" class="bouton_item" onclick="#" value="Accepter" style="background-color: green; border-color: green; color: white;" >
           <input type="button" class="bouton_item" onclick="openForm()" value="Reproposer" >
         </div>
@@ -88,8 +88,13 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
             
           
             <input type="number" placeholder="Proposition" name="proposition" style="width: 115px;" required >
-
-            <button class="bouton_item" type="submit" style="background-color: green; border-color: green; color: white;">Valider</button>
+       			
+            <?php $proposition = isset($_POST["proposition"])? $_POST["proposition"] : "";?>
+            <button class="bouton_item" type="submit" onclick="location.href='./updateoffre.php?id_supprimer= <?php echo $data['nego_ID']  ;?>'" style="background-color: green; border-color: green; color: white;">Valider</button>
+            <?php
+            	//UPDATE negociation SET nego_Offre= '$proposition'
+            //
+            ?>
             <button class="bouton_item" type="button" onclick="closeForm()" style="background-color: red; border-color: red; color: white;">Annuler</button>
 
           </form>

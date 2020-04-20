@@ -82,7 +82,7 @@
               <td align="right"><input type="checkbox" name="cgu" value="cgu" /> J'accepte les CGU <br/>
             </tr>            
             <tr>
-              <td colspan="2" align="right"><br><input type="submit" name="button" value="Valider"></td>
+              <td colspan="2" align="right"><br><input type="submit" name="button2" value="Valider"></td>
             </tr>
           </table>
         </form>
@@ -116,6 +116,40 @@ $database = "ebayece";
 //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
+if ($_POST["button2"]) {
+  if ($db_found)
+  $verif=0; 
+  $sql="SELECT payement_Date FROM payement WHERE payement_ID='$data['payement_ID']'";
+    {if ($date_expiration==mysqli_query($db_handle, $sql);) {
+      # code...
+      $sql="SELECT payement_Numero FROM payement WHERE payement_ID='$data['payement_ID']'";
+      if($numero_carte==mysqli_query($db_handle, $sql);)
+      {
+        $sql="SELECT payement_Code FROM payement WHERE payement_ID='$data['payement_ID']'";
+        if (mot_de_passe==mysqli_query($db_handle, $sql);) {
+                  $sql="SELECT payement_NomTitulaire FROM payement WHERE payement_ID='$data['payement_ID']'";
+          if (nom_titulaire==mysqli_query($db_handle, $sql);) {
+            # code...
+                  // if prix < compte a placer ici 
+                        $verif=1;
+
+          }
+          # code...
+        }
+      }
+    }
+    if($verif==1)
+      {
+        ?>
+        
+      }
+    else
+
+
+
+
+
+
 ?>
 
 

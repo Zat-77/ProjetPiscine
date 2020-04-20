@@ -76,9 +76,21 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
       ?>
       <div class="emplacement_boutons_item">
 
-        <div class="emplacement_boutons_item">
+        
+        <div class="form-popup" id="myForm">
+          <form action="xxxxxxxxxxxxxxxxx.php" class="form-container">
+            
+          
+            <input type="number" placeholder="Enchere Max" name="Enchere Max" style="width: 115px;" required >
+            <?php 
+              // UPDATE enchere SET enchere_PrixMax = '$prixmax' WHERE enchere_ID= '$data['enchere_ID']'
+            ?> 
 
-          <input type="button" class="bouton_item" onclick="#" value="Edit Max Allowed" >
+            <button class="bouton_item" type="submit" style="background-color: green; border-color: green; color: white;">Valider</button>
+            <button class="bouton_item" type="button" onclick="closeForm()" style="background-color: red; border-color: red; color: white;">Annuler</button>
+
+          </form>
+        </div>
           
 
       </div>
