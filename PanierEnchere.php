@@ -77,20 +77,20 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
       <div class="emplacement_boutons_item">
 
         
-        <div class="form-popup" id="myForm">
-          <form action="xxxxxxxxxxxxxxxxx.php" class="form-container">
+        
+          <form action="EnchereMax.php" class="form-container">
             
           
-            <input type="number" placeholder="Enchere Max" name="Enchere Max" style="width: 115px;" required >
+            <input type="number" placeholder="Enchere_Max" name="Enchere_Max" style="width: 115px;" required >
             <?php 
               // UPDATE enchere SET enchere_PrixMax = '$prixmax' WHERE enchere_ID= '$data['enchere_ID']'
             ?> 
 
-            <button class="bouton_item" type="submit" style="background-color: green; border-color: green; color: white;">Valider</button>
+            <button class="bouton_item" type="submit" name="button1" value= "<?php echo $data['enchere_ID']  ;?>" style="background-color: green; border-color: green; color: white;">Valider</button>
             <button class="bouton_item" type="button" onclick="closeForm()" style="background-color: red; border-color: red; color: white;">Annuler</button>
 
           </form>
-        </div>
+        
           
 
       </div>
