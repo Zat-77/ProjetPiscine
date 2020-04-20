@@ -139,11 +139,14 @@ if (isset($_POST['button1'])) {
     } else{
         echo "Error: " . $_FILES["photo"]["error"];
     }
+    if ($photo_profil!="") {
+
 if ($filename!= $data['vendeur_Photo']) {
  $sql="UPDATE vendeur SET vendeur_Photo = '$filename' WHERE vendeur_ID = 1";
  echo "string";
  mysqli_query($db_handle, $sql);
 
+}
 }
 if ($pseudo!= $data['vendeur_Pseudo']) {
  $sql="UPDATE vendeur SET vendeur_Pseudo = '$pseudo' WHERE vendeur_ID = 1";
