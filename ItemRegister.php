@@ -75,15 +75,15 @@ if ($_POST["button1"]) {
 		//Categorie
 		if ($categorie == "ferraille_ou_tresor") {
 
-			$sql .= " 1,";
+			$sql .= " 'ferraille_ou_tresor',";
 			$tampon++;
 		}
 		elseif ($categorie == "bon_pour_le_musee") {
-			$sql .= " 2,";
+			$sql .= " 'bon_pour_le_musee',";
 			$tampon++;
 		}
 		elseif ($categorie == "accessoire_vip") {
-			$sql .= " 3,";
+			$sql .= " 'accessoire_vip',";
 			$tampon++;
 		}
 		{
@@ -101,26 +101,18 @@ if ($_POST["button1"]) {
 		}
 
 
-		//   /!\ A CHANGER
-		//Mode de Vente
-
-
 
 		if ($mode == "enchere") {
 
-			$sql .= " 1,";
+			$sql .= " 'enchere',";
 			$tampon++;
 		}
 		elseif ($mode == "vente_immediate") {
-			$sql .= " 2,";
+			$sql .= " 'achat_immediat',";
 			$tampon++;
 		}
 		elseif ($mode == "negociation") {
-			$sql .= " 3,";
-			$tampon++;
-		}
-		elseif ($mode == "vente_ou_negociation") {
-			$sql .= " 4,";
+			$sql .= " 'meilleur_offre',";
 			$tampon++;
 		}
 		else

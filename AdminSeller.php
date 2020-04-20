@@ -65,17 +65,17 @@ $db_found = mysqli_select_db($db_handle, $database);
 //si le bouton est cliqué
 if (isset($_POST['button1'])) {
   if ($db_found) {
-    $sql = "SELECT * FROM vendeur WHERE vendeur_Pseudo LIKE '%$recherche%";
+    $sql = "SELECT * FROM vendeur WHERE vendeur_Pseudo = '$recherche";
     
    
     
     $result = mysqli_query($db_handle, $sql);
 //tester s'il y a de résultat
     if (mysqli_num_rows($result) == 0) {
-//le livre recherché n'existe pas
+//l'item' recherché n'existe pas
       echo "Item not found";
     } else {
-//on trouve le livre recherché
+//on trouve l'item'recherché
       while ($data = mysqli_fetch_assoc($result)) {
         
         $_SESSION['sql']=$sql;

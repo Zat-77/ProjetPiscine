@@ -16,16 +16,16 @@ $result = mysqli_query($db_handle, $sql);
 				
 				$image1=$data['item_Photo'];
 
-				if ($data['item_Categorie'] == "1") {
+				if ($data['item_Categorie'] == "ferraille_ou_tresor") {
 
 			$categorie1 = "Ferraille ou Trésor";
 			
 		}
-		elseif ($data['item_Categorie'] == "2") {
+		elseif ($data['item_Categorie'] == "bon_pour_le_musee") {
 			$categorie1 = " Bon pour le Musée";
 			
 		}
-		elseif ($data['item_Categorie'] == "3") {
+		elseif ($data['item_Categorie'] == "accessoire_vip") {
 			$categorie1 .= "Accessoire Vip";
 			
 		}
@@ -66,7 +66,7 @@ $result = mysqli_query($db_handle, $sql);
 								<p><small><?php echo "Description: " . $data['item_Description'] .""; ?> </small></p>
 
 
-								<h6 location.href="./MesObjetsAcheteur.php"><?php echo "Vendeur: " . $pseudo .""; ?> <br  >Max allowed: xxeuros <br><b><?php echo "Prix: " . $data['item_Prix'] .""; ?></b></h6>
+								<h6 > <a href="./MesObjetsAcheteur.php"><?php echo "Vendeur: " . $pseudo .""; ?> </a> <br  >Max allowed: xxeuros <br><b><?php echo "Prix: " . $data['item_Prix'] .""; ?></b></h6>
 
 								<div class="emplacement_boutons_item">
 

@@ -100,14 +100,13 @@ $data = mysqli_fetch_assoc($result);
               <td>Mode de Vente</td>
               <td>
                 <input type="radio" name="mode" value="enchere" /> Enchère <br />
-                <input type="radio" name="mode" value="vente_immediate" /> Vente Immédiate <br />
-                <input type="radio" name="mode" value="negociation" /> Negociation <br />
-                <input type="radio" name="mode" value="vente_ou_negociation" /> Vente ou Négociation <br />
+                <input type="radio" name="mode" value="achat_immediat" /> Vente Immédiate <br />
+                <input type="radio" name="mode" value="meilleur_offre" /> Negociation <br />
               </td>
             </tr>
             <tr>
             <tr>
-              <td colspan="2" align="center"><br><input type="submit" class="bouton_item" style="background-color: green; border-color: green; color: white; name="button1" value="Valider"></td>
+              <td colspan="2" align="center"><br><input type="submit" class="bouton_item" style="background-color: green; border-color: green; color: white;" name="button1" value="Valider"></td>
             </tr>
           </table>
         </form>
@@ -180,19 +179,19 @@ if ($filename!= $data['item_Photo']) {
 }
 }
 if ($categorie!= $data['item_Categorie']) {
-  if ($categorie == "ferraille_ou_tresor" && $data['item_Categorie']== 1) {
+  if ($categorie == "ferraille_ou_tresor" && $data['item_Categorie']== "ferraille_ou_tresor") {
 
-   $sql="UPDATE item SET item_Categorie = '1' WHERE item_ID = 1";
+   $sql="UPDATE item SET item_Categorie = 'ferraille_ou_tresor' WHERE item_ID =1";
    mysqli_query($db_handle, $sql);
  }
- elseif ($categorie == "bon_pour_le_musee"&& $data['item_Categorie']== 2) {
+ elseif ($categorie == "bon_pour_le_musee"&& $data['item_Categorie']== "bon_pour_le_musee") {
 
-   $sql="UPDATE item SET item_Categorie = '2' WHERE item_ID = 1";
+   $sql="UPDATE item SET item_Categorie = 'bon_pour_le_musee' WHERE item_ID = 1";
    mysqli_query($db_handle, $sql);
  }
- elseif ($categorie == "accessoire_vip"&& $data['item_Categorie']== 3) {
+ elseif ($categorie == "accessoire_vip"&& $data['item_Categorie']== "accessoire_vip") {
 
-   $sql="UPDATE item SET item_Categorie = '3' WHERE item_ID = 1";
+   $sql="UPDATE item SET item_Categorie = 'accessoire_vip' WHERE item_ID = 1";
    mysqli_query($db_handle, $sql);
  }
  
@@ -217,26 +216,22 @@ if ($description!= $data['item_Description']) {
  
 }
 if ($mode!= $data['item_TypeVente']) {
-  if ($mode == "enchere" && $data['item_TypeVente']== 1) {
+  if ($mode == "enchere" && $data['item_TypeVente']== "enchere") {
 
-   $sql="UPDATE item SET item_TypeVente = '1' WHERE item_ID = 1";
+   $sql="UPDATE item SET item_TypeVente = 'enchere' WHERE item_ID = 1";
    mysqli_query($db_handle, $sql);
  }
- elseif ($mode == "vente_immediate"&& $data['item_TypeVente']== 2) {
+ elseif ($mode == "achat_immediat"&& $data['item_TypeVente']== "achat_immediat") {
 
-   $sql="UPDATE item SET item_TypeVente = '2' WHERE item_ID = 1";
+   $sql="UPDATE item SET item_TypeVente = 'achat_immediat' WHERE item_ID = 1";
    mysqli_query($db_handle, $sql);
  }
- elseif ($mode == "negociation"&& $data['item_TypeVente']== 3) {
+ elseif ($mode == "meilleur_offre"&& $data['item_TypeVente']== "meilleur_offre") {
 
-   $sql="UPDATE item SET item_TypeVente = '3' WHERE item_ID = 1";
+   $sql="UPDATE item SET item_TypeVente = 'meilleur_offre' WHERE item_ID = 1";
    mysqli_query($db_handle, $sql);
  }
-  elseif ($mode == "vente_ou_negociation"&& $data['item_TypeVente']== 4) {
-
-   $sql="UPDATE item SET item_TypeVente = '4' WHERE item_ID = 1";
-   mysqli_query($db_handle, $sql);
- }
+  
  
  
 }
