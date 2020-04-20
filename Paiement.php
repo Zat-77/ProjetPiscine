@@ -82,7 +82,8 @@
               <td align="right"><input type="checkbox" name="cgu" value="cgu" /> J'accepte les CGU <br/>
             </tr>            
             <tr>
-              <td colspan="2" align="right"><br><input type="submit" name="button2" value="Valider"></td>
+              <td colspan="2" align="right"><br>
+                <input type="submit" class="bouton_item" style="background-color: green; border-color: green; color: white; name="button2" value="Valider"></td>
             </tr>
           </table>
         </form>

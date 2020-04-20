@@ -38,11 +38,11 @@ $_SESSION['TypeUser']="nonlog";
               <td><input type="text" name="mail"><br></td>
             </tr>
             <tr>
-              <td>Mot de passe</td>
+              <td>Mot de passe &nbsp</td>
               <td><input type="password" name="mot_de_passe"></td>
             </tr>
             <tr>
-              <td colspan="2" align="center"><br><input type="submit" name="button1"value="Valider"></td>
+              <td colspan="2" align="center"><br><input type="submit" class="bouton_item" style="background-color: green; border-color: green; color: white;"  name="button1"value="Valider"></td>
             </tr>
           </table>
         </form>
@@ -59,7 +59,7 @@ $_SESSION['TypeUser']="nonlog";
   </div>
 </div>
 
-<footer class="container-fluid text-center" id='footer'>
+<footer class="container-fluid text-center">
   <p><br>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
 </footer>
 
