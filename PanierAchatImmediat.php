@@ -74,8 +74,7 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
       
       ?>
       <div class="emplacement_boutons_item">
-
-<input type="button" class="bouton_item" onclick="#" value="Supprimer" style="background-color: red; border-color: red; color: white; ">
+<input type="button" class="bouton_item" onclick="location.href='./Supprimer.php?id_supprimer= <?php echo $item['item_ID']  ;?>'" value="Supprimer" style="background-color: red; border-color: red; color: white; ">
 
 
       </div>
