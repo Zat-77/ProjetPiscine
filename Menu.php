@@ -14,9 +14,7 @@
 </head>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
+
 
     
     <?php
@@ -26,14 +24,15 @@
 			 echo " 
           <ul class='nav navbar-dark navbar-right'>
            <li><a href= 'Login.php'><span class='glyphicon glyphicon-log-in'></span>Log in</a></li>
-           <li><a href= 'Register.php'><span class='glyphicon glyphicon-log-in'></span>Log in</a></li>
+           <li><a href= 'Register.php'>Register</a></li>
           </ul>";
          
          }
          if($user=="admin")
          {
+          //<li><a href='Home.php'>Home</a></li>
         	 echo " <ul class='nav navbar-dark'>
-             	  	<li><a href='Home.php'>Home</a></li>
+             	  	
             		 <li><a href='AdminProduct.php'>Products</a></li>
                              <li><a href='ItemRegister.php'>Vendre</a></li>
              <li><a href='MesObjets.php'>MesObjets</a></li>
@@ -47,11 +46,11 @@
 
 
          }
-
+//<li><a href='Home.php'>Home</a></li>
          if($user=="vendeur")
          {
          	         		   	 echo " <ul class='nav navbar-dark'>
-             <li><a href='Home.php'>Home</a></li>
+             
              <li><a href='ItemRegister.php'>Vendre</a></li>
              <li><a href='MesObjets.php'>MesObjets</a></li>
              <li><a href='Negociation.php'>Negociation</a></li>
@@ -65,7 +64,7 @@
          if($user=="acheteur")
          	{
          		   	 echo " <ul class='nav navbar-nav'>
-             <li><a href='Home.php'>Home</a></li>
+   
              <li><a href='Produit.php'>Products</a></li>
               </ul>
 

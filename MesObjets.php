@@ -13,8 +13,36 @@
 
 <body>
 
-  <?php include("Menu.php"); ?>
-<div class="container-fluid text-center">    
+  <?php include("Menu.php"); 
+   $user_session=1;
+        $database = "ebayece";
+//connectez-vous dans votre BDD
+//Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
+        $db_handle = mysqli_connect('localhost', 'root', '');
+        $db_found = mysqli_select_db($db_handle, $database);
+        $sql = "SELECT * FROM vendeur where vendeur_ID=$user_session";
+        $res = mysqli_query($db_handle, $sql);
+        $vendeur = mysqli_fetch_assoc($res);
+
+        if ($vendeur['vendeur_Fond']=='Ece') {
+          # code...
+        print ' <div class="container-fluid text-center background_image1">';
+        }
+        else    if ($vendeur['vendeur_Fond']=='Loutre') {
+          # code...
+        print'  <div class="container-fluid text-center background_image2"> '; 
+        }
+        
+        else    if ($vendeur['vendeur_Fond']=='GoodGames') {
+          # code...
+         print' <div class="container-fluid text-center background_image3">  ';
+        }
+        else{
+            print' <div class="container-fluid text-center ">  ';
+        }
+        
+
+?>
   <div class="row content">
     <div class="col-sm-2 sidenav">
        <form action="MesObjets.php" method="post">
@@ -44,22 +72,12 @@
     </div>
 
 
-    <div class="col-sm-8 text-center"> 
+    <div class="col-sm-8 text-center"  > 
 
       <div class="container mt-3">
        <div class="media border p-0">
         <?php 
-        $user_session=1;
-        $database = "ebayece";
-//connectez-vous dans votre BDD
-//Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
-        $db_handle = mysqli_connect('localhost', 'root', '');
-        $db_found = mysqli_select_db($db_handle, $database);
-        $sql = "SELECT * FROM vendeur where vendeur_ID=$user_session";
-        $res = mysqli_query($db_handle, $sql);
-        $vendeur = mysqli_fetch_assoc($res);
-
-
+       
         print '  <img src="image/'.$vendeur['vendeur_Photo'].'" class="mr-3 mt-0" style="width:220px;">';?>
         <div class="media-body">
           <h4> 

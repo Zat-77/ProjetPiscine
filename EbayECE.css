@@ -48,6 +48,22 @@
 
 
 }
+.background_image2{
+  color:black;
+  background-color:white;
+  background-image:url(Loutre.jpg);
+
+
+}
+
+.background_image3{
+  color:black;
+  background-color:white;
+  background-image:url(Good_Games_logo.jpg);
+
+
+}
+
 
 body{
   height: 100%;

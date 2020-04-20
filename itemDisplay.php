@@ -1,5 +1,7 @@
 	<?php
 $sql=$_SESSION['sql'];
+$id_User=$_SESSION['id_User'];
+$_SESSION['id_User']="5";
 $database1 = "ebayece";
 //connectez-vous dans votre BDD
 //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
@@ -26,6 +28,12 @@ $result = mysqli_query($db_handle, $sql);
 			$categorie1 .= "Accessoire Vip";
 			
 		}
+		$tampon=$data['item_IDVendeur'];
+		$sqlVendeur="SELECT * FROM vendeur WHERE vendeur_ID = '$tampon'";
+		$res = mysqli_query($db_handle, $sqlVendeur);
+		$IDVendeur=mysqli_fetch_assoc($res);
+		$pseudo=$IDVendeur['vendeur_Pseudo'];
+
 				?>
 				<!DOCTYPE html>
 				<html lang="en">
@@ -40,22 +48,34 @@ $result = mysqli_query($db_handle, $sql);
 				</head>
 				<body>
 
+					
+
+
+
+
+
 					<div class="container mt-3">
-						<div class="media border p-3">
-							
-							<?php print '<img src="image/'.$image1.'" class="mr-3 mt-3 " style="width:200px;" />';?>
-							<!-- <img src="#" class="mr-3 mt-3 " style="width:200px;"> -->
+						<div class="media border p-0">
+							<?php print '<img src="image/'.$image1.'" class="mr-3 mt-0 " style="width:220px;" />';?>
 							<div class="media-body">
-								<h4><?php echo "Item A: " . $data['item_Nom'] .""; ?></h4><h6><small><i><?php echo "Categorie: " . $categorie1 .""; ?><br><?php echo "Type de vente: " . $data['item_TypeVente'] .""; ?></i></small></h6>
 
-								<p><?php echo "Description: " . $data['item_Description'] .""; ?></p>
+								<h4><?php echo "Item: " . $data['item_Nom'] .""; ?></h4>
+								<h8><i><?php echo "Categorie: " . $categorie1 .""; ?><br><?php echo "Type de vente: " . $data['item_TypeVente'] .""; ?></i></h8>
 
-								<h5><?php echo "Prix: " . $data['item_Prix'] .""; ?></h5>
+								<p><small><?php echo "Description: " . $data['item_Description'] .""; ?> </small></p>
 
-							</div>
+
+								<h6><?php echo "Vendeur: " . $pseudo .""; ?> <br>Max allowed: xxeuros <br><b><?php echo "Prix: " . $data['item_Prix'] .""; ?></b></h6>
+
+								<div class="emplacement_boutons_item">
+
+									<input type="button" class="bouton_item" onclick="location.href='./AjouterPanier.php?id_Item= <?php echo $data['item_ID']  ;?>'" value="Ajouter au Panier" >
+
+
+								</div>
+							</div>     
 						</div>
 					</div>
-
 				</body>
 				</html>
 				<?php		
