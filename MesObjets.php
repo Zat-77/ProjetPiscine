@@ -25,16 +25,16 @@
         $vendeur = mysqli_fetch_assoc($res);
 
         if ($vendeur['vendeur_Fond']=='Ece') {
-          # code...
+          
         print ' <div class="container-fluid text-center background_image1">';
         }
         else    if ($vendeur['vendeur_Fond']=='Loutre') {
-          # code...
+          
         print'  <div class="container-fluid text-center background_image2"> '; 
         }
         
         else    if ($vendeur['vendeur_Fond']=='GoodGames') {
-          # code...
+          
          print' <div class="container-fluid text-center background_image3">  ';
         }
         else{
@@ -58,8 +58,8 @@
               <input type="checkbox" name="bon_pour_le_musee" value="bon_pour_le_musee" /> Bon pour le musée  <br/>
               <input type="checkbox" name="accessoire_vip" value="accessoire_vip" /> Accessoire VIP <br/>
               <input type="checkbox" name="meilleur_offre" value="meilleur_offre" /> Meilleur offre <br/>
-              <input type="checkbox" name="passer_a_la_commande" value="passer_a_la_commande" /> Passer à la commande <br/>
-              <input type="checkbox" name="achat_immediat" value="achat_immediat" /> Achat immédiat <br/> 
+              <input type="checkbox" name="enchere" value="enchere" /> Enchere <br/>
+              <input type="checkbox" name="achat_immediat" value="achat_immediat" /> Achat immédiat <br/>
             </td>
           </tr>
           <tr>
@@ -126,56 +126,57 @@ if (isset($_POST['button1'])) {
       
     }
     if ($ferraille != "") {
-//on cherche le livre avec les paramètres titre et auteur
-      $sql .= " WHERE (item_Categorie LIKE 1";
+//on cherche les items avec categories
+      $sql .= " WHERE (item_Categorie = 'ferraille_ou_tresor'";
       if ($accessoire != "") {
-        $sql .= " OR  item_Categorie LIKE 3";
+        $sql .= " OR  item_Categorie = 'accessoire_vip'";
 
 
         
       }
       if ($musee != "") {
-        $sql .= " OR  item_Categorie LIKE 2";
+        $sql .= " OR  item_Categorie = 'bon_pour_le_musee'";
       }
       $sql .= ")";
     }
     if ($musee != "" && $ferraille == "") {
-      $sql .= " WHERE (item_Categorie LIKE 2";
+      $sql .= " WHERE (item_Categorie = 'bon_pour_le_musee'";
       if ($accessoire != "") {
-        $sql .= " OR  item_Categorie LIKE 3";
+        $sql .= " OR  item_Categorie = 'accessoire_vip'";
       }
       $sql .= " )";
     }
     if ($accessoire != "" && $musee == "" && $ferraille == "") {
-      $sql .= " WHERE (item_Categorie LIKE 3)";
+      $sql .= " WHERE (item_Categorie = 'accessoire_vip')";
     }
     if ($accessoire == "" && $musee == "" && $ferraille == "") {
       $sql .= " WHERE (item_Categorie)";
     }
     if ($meilleur_offre != "") {
-//on cherche le livre avec les paramètres titre et auteur
-      $sql .= " AND (item_TypeVente LIKE 1";
+//on cherche les items avec les Type de vente
+      $sql .= " AND (item_TypeVente = 'meilleur_offre'";
       if ($achat_immediat != "") {
-        $sql .= " OR  item_TypeVente LIKE 3";
+        $sql .= " OR  item_TypeVente = 'achat_immediat'";
 
 
         
       }
-      if ($passer_a_la_commande != "") {
-        $sql .= " OR  item_TypeVente LIKE 2";
+      if ($enchere != "") {
+        $sql .= " OR  item_TypeVente = 'enchere'";
       }
       $sql .= ")";
     }
-    if ($passer_a_la_commande != "" && $meilleur_offre == "") {
-      $sql .= " AND (item_TypeVente LIKE 2";
+    if ($enchere != "" && $meilleur_offre == "") {
+      $sql .= " AND (item_TypeVente = 'enchere'";
       if ($achat_immediat != "") {
-        $sql .= " OR  item_TypeVente LIKE 3";
+        $sql .= " OR  item_TypeVente = 'achat_immediat'";
       }
       $sql .= " )";
     }
-    if ($achat_immediat != "" && $passer_a_la_commande == "" && $meilleur_offre == "") {
-      $sql .= " AND (item_TypeVente LIKE 3)";
+    if ($achat_immediat != "" && $enchere == "" && $meilleur_offre == "") {
+      $sql .= " AND (item_TypeVente = 'achat_immediat')";
     }
+    
     $sql .="AND item_IDVendeur='$user_session'";
     $result = mysqli_query($db_handle, $sql);
 //tester s'il y a de résultat
