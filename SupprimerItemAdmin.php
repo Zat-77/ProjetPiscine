@@ -13,4 +13,8 @@ $sql="DELETE FROM enchere  WHERE enchere_IDItem='$id_Supprimer'";
 $result = mysqli_query($db_handle, $sql);
 $sql="DELETE FROM immediat  WHERE immediat_IDItem='$id_Supprimer'";
 $result = mysqli_query($db_handle, $sql);
+
 ?>
+<script >
+	location.href = "./AdminAdmin.php" ;
+</script>

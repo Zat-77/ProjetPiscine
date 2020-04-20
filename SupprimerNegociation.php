@@ -11,3 +11,6 @@ $result = mysqli_query($db_handle, $sql);
 
 
 ?>
+<script >
+	location.href = "./PanierNegociation.php" ;
+</script>

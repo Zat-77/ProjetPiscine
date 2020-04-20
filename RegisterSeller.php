@@ -116,9 +116,12 @@ if ($_POST["button1"]) {
 		//On vérifie que tous les champs sont remplient
 		if ($tampon==6) {
 			mysqli_query($db_handle, $sql);
-			echo "$sql";
 		}
-		
+			?>
+<script >
+			location.href = "./EditSeller.php" ;
+</script>		
+		<?php
 //tester s'il y a de résultat
 // 		if (mysqli_num_rows($result) == 0) {
 // //le livre recherché n'existe pas

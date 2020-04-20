@@ -12,4 +12,9 @@ $result = mysqli_query($db_handle, $sql);
 $sql="DELETE FROM enchere  WHERE enchere_IDItem IN (SELECT item_ID FROM item WHERE  item_IDVendeur ='$id_Supprimer'";
 $result = mysqli_query($db_handle, $sql);
 $sql="DELETE FROM immediat  WHERE immediat_IDItem IN (SELECT item_ID FROM item WHERE  item_IDVendeur ='$id_Supprimer'";
+
 ?>
+<script >
+	location.href = "./AdminSeller.php" ;
+</script>
+
