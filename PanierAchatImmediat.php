@@ -33,7 +33,7 @@ $database1 = "ebayece";
 //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database1);
-$sql="SELECT * FROM immediat WHERE immediat_IDAcheteur = 5";
+$sql="SELECT * FROM immediat WHERE immediat_IDAcheteur = 1";
 $result = mysqli_query($db_handle, $sql);
 
 //on trouve le livre recherché
@@ -75,7 +75,7 @@ $vendeur = mysqli_fetch_assoc($resultat_Vendeur);
       ?>
       <div class="emplacement_boutons_item">
 
-<input type="button" class="bouton_item" onclick="location.href='./Supprimer.php?id_supprimer= <?php echo $item['item_ID']  ;?>'" value="Supprimer" style="background-color: red; border-color: red; color: white; ">
+  <input type="button" class="bouton_item" onclick="location.href='./SupprimerAchatImmediat.php?id_supprimer= <?php echo $item['item_ID']  ;?>'" value="Supprimer" style="background-color: red; border-color: red; color: white; ">
 
 
       </div>

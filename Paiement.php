@@ -103,6 +103,23 @@
   </div>
 </div>
 
+<?php
+$date_expiration = isset($_POST["date_expiration"])? $_POST["date_expiration"] : "";
+$cryptogramme = isset($_POST["cryptogramme"])? $_POST["cryptogramme"] : "";
+$numero_carte = isset($_POST["numero_carte"])? $_POST["numero_carte"] : "";
+$mot_de_passe = isset($_POST["mot_de_passe"])? $_POST["mot_de_passe"] : "";
+$nom_titulaire = isset($_POST["nom_titulaire"])? $_POST["nom_titulaire"] : "";
+
+
+$database = "ebayece";
+//connectez-vous dans votre BDD
+//Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+?>
+
+
+
 <footer class="container-fluid text-center">
   <p>Copyright &copy; 2020  eBayECE Inc. Tous droits réservés.</p>
 </footer>
