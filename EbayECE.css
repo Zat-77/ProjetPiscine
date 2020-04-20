@@ -80,3 +80,20 @@ bottom:0;
       
     }
 
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  float: right;
+  margin: 15px;
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 10px;
+  
+ 
+}
+
+
+
+
