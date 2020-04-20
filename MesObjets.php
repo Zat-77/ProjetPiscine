@@ -17,7 +17,7 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-       <form action="AdminAdmin.php" method="post">
+       <form action="MesObjets.php" method="post">
         <table>
 
           <tr>
@@ -57,6 +57,7 @@ $meilleur_offre = isset($_POST["meilleur_offre"])? $_POST["meilleur_offre"] : ""
 $passer_a_la_commande = isset($_POST["passer_a_la_commande"])? $_POST["passer_a_la_commande"] : "";
 $achat_immediat = isset($_POST["achat_immediat"])? $_POST["achat_immediat"] : "";
 $button1 = isset($_POST["button1"])? $_POST["button1"] : "";
+$recherche = isset($_POST["recherche"])? $_POST["recherche"] : "";
 
 
 
@@ -67,11 +68,21 @@ $database = "ebayece";
 //Rappel: votre serveur = localhost |votre login = root |votre password = <rien>
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
+
+//A remplacer par SESSION
+$user_session=1;
+
+
+
 //si le bouton est cliqué
 if (isset($_POST['button1'])) {
   if ($db_found) {
     $sql = "SELECT * FROM item";
-    
+    if ($recherche != "" && $accessoire == "" && $musee == "" && $ferraille == "" &&$meilleur_offre == "" && $passer_a_la_commande == "" && $achat_immediat == "") {
+
+      $sql .= " WHERE item_Nom LIKE '%$recherche%' UNION SELECT * FROM item WHERE item_IDVendeur = (SELECT vendeur_ID FROM vendeur WHERE vendeur_Pseudo LIKE '%$recherche%' )";
+      
+    }
     if ($ferraille != "") {
 //on cherche le livre avec les paramètres titre et auteur
       $sql .= " WHERE (item_Categorie LIKE 1";
@@ -123,7 +134,7 @@ if (isset($_POST['button1'])) {
     if ($achat_immediat != "" && $passer_a_la_commande == "" && $meilleur_offre == "") {
       $sql .= " AND (item_TypeVente LIKE 3)";
     }
-    
+    $sql .="AND item_IDVendeur='$user_session'";
     $result = mysqli_query($db_handle, $sql);
 //tester s'il y a de résultat
     if (mysqli_num_rows($result) == 0) {
@@ -173,10 +184,12 @@ if (isset($_POST['button1'])) {
 //Vendeur: '.$vendeur['vendeur_Pseudo'].' 
 
     }
-  } else {
+  } 
+}
+else {
     echo "Database not found";
   }
-
+  }
 ?> 
 
 
