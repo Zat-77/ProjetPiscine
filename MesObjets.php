@@ -98,7 +98,7 @@ $ferraille = isset($_POST["ferraille_ou_tresor"])? $_POST["ferraille_ou_tresor"]
 $musee = isset($_POST["bon_pour_le_musee"])? $_POST["bon_pour_le_musee"] : "";
 $accessoire = isset($_POST["accessoire_vip"])? $_POST["accessoire_vip"] : "";
 $meilleur_offre = isset($_POST["meilleur_offre"])? $_POST["meilleur_offre"] : "";
-$passer_a_la_commande = isset($_POST["passer_a_la_commande"])? $_POST["passer_a_la_commande"] : "";
+$enchere = isset($_POST["enchere"])? $_POST["enchere"] : "";
 $achat_immediat = isset($_POST["achat_immediat"])? $_POST["achat_immediat"] : "";
 $button1 = isset($_POST["button1"])? $_POST["button1"] : "";
 $recherche = isset($_POST["recherche"])? $_POST["recherche"] : "";
@@ -120,7 +120,7 @@ $tampon=0;
 if (isset($_POST['button1'])) {
   if ($db_found) {
     $sql = "SELECT * FROM item";
-    if ($recherche != "" && $accessoire == "" && $musee == "" && $ferraille == "" &&$meilleur_offre == "" && $passer_a_la_commande == "" && $achat_immediat == "") {
+    if ($recherche != "" && $accessoire == "" && $musee == "" && $ferraille == "" &&$meilleur_offre == "" && $enchere == "" && $achat_immediat == "") {
 
       $sql .= " WHERE item_Nom LIKE '%$recherche%' UNION SELECT * FROM item WHERE item_IDVendeur = (SELECT vendeur_ID FROM vendeur WHERE vendeur_Pseudo LIKE '%$recherche%' )";
       
